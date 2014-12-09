@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MBBBaseUIViewController.h
 //  MacBulletinBoard
 //
 //  Created by Mac on 12/9/14.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface MBBBaseUIViewController : UIViewController
 
+- (UIView*)getCustomXibUsingXibName:(NSString*)xibName;
 
 @end
-

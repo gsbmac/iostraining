@@ -10,11 +10,16 @@
 		C3A35EE91A368CCC00EB163A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A35EE81A368CCC00EB163A /* main.m */; };
 		C3A35EEC1A368CCC00EB163A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A35EEB1A368CCC00EB163A /* AppDelegate.m */; };
 		C3A35EEF1A368CCC00EB163A /* MacBulletinBoard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C3A35EED1A368CCC00EB163A /* MacBulletinBoard.xcdatamodeld */; };
-		C3A35EF21A368CCC00EB163A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A35EF11A368CCC00EB163A /* ViewController.m */; };
 		C3A35EF51A368CCC00EB163A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3A35EF31A368CCC00EB163A /* Main.storyboard */; };
 		C3A35EF71A368CCC00EB163A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3A35EF61A368CCC00EB163A /* Images.xcassets */; };
 		C3A35EFA1A368CCC00EB163A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3A35EF81A368CCC00EB163A /* LaunchScreen.xib */; };
 		C3A35F061A368CCC00EB163A /* MacBulletinBoardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A35F051A368CCC00EB163A /* MacBulletinBoardTests.m */; };
+		C3A35F151A369D3F00EB163A /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3A35F141A369D3F00EB163A /* LoginView.xib */; };
+		C3A35F181A36A33400EB163A /* MBBLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A35F171A36A33400EB163A /* MBBLoginView.m */; };
+		C3A35F1B1A36A65B00EB163A /* MBBBaseUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A35F1A1A36A65B00EB163A /* MBBBaseUIViewController.m */; };
+		C3A35F1E1A36A6BA00EB163A /* MBBLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A35F1D1A36A6BA00EB163A /* MBBLoginViewController.m */; };
+		C3CD9D971A36D64E000F842E /* MBBHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3CD9D961A36D64E000F842E /* MBBHomeViewController.m */; };
+		C3CD9D9A1A36D7A8000F842E /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3CD9D991A36D7A8000F842E /* HomeView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,14 +39,22 @@
 		C3A35EEA1A368CCC00EB163A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C3A35EEB1A368CCC00EB163A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C3A35EEE1A368CCC00EB163A /* MacBulletinBoard.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MacBulletinBoard.xcdatamodel; sourceTree = "<group>"; };
-		C3A35EF01A368CCC00EB163A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C3A35EF11A368CCC00EB163A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C3A35EF41A368CCC00EB163A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C3A35EF61A368CCC00EB163A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C3A35EF91A368CCC00EB163A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C3A35EFF1A368CCC00EB163A /* MacBulletinBoardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacBulletinBoardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3A35F041A368CCC00EB163A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3A35F051A368CCC00EB163A /* MacBulletinBoardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MacBulletinBoardTests.m; sourceTree = "<group>"; };
+		C3A35F141A369D3F00EB163A /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginView.xib; path = Xibs/LoginView.xib; sourceTree = "<group>"; };
+		C3A35F161A36A33400EB163A /* MBBLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBBLoginView.h; path = Views/MBBLoginView.h; sourceTree = "<group>"; };
+		C3A35F171A36A33400EB163A /* MBBLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBBLoginView.m; path = Views/MBBLoginView.m; sourceTree = "<group>"; };
+		C3A35F191A36A65B00EB163A /* MBBBaseUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBBBaseUIViewController.h; path = Controllers/MBBBaseUIViewController.h; sourceTree = "<group>"; };
+		C3A35F1A1A36A65B00EB163A /* MBBBaseUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBBBaseUIViewController.m; path = Controllers/MBBBaseUIViewController.m; sourceTree = "<group>"; };
+		C3A35F1C1A36A6BA00EB163A /* MBBLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBBLoginViewController.h; path = Controllers/MBBLoginViewController.h; sourceTree = "<group>"; };
+		C3A35F1D1A36A6BA00EB163A /* MBBLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBBLoginViewController.m; path = Controllers/MBBLoginViewController.m; sourceTree = "<group>"; };
+		C3CD9D951A36D64E000F842E /* MBBHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBBHomeViewController.h; path = Controllers/MBBHomeViewController.h; sourceTree = "<group>"; };
+		C3CD9D961A36D64E000F842E /* MBBHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBBHomeViewController.m; path = Controllers/MBBHomeViewController.m; sourceTree = "<group>"; };
+		C3CD9D991A36D7A8000F842E /* HomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomeView.xib; path = Xibs/HomeView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,10 +96,12 @@
 		C3A35EE51A368CCC00EB163A /* MacBulletinBoard */ = {
 			isa = PBXGroup;
 			children = (
+				C3A35F131A3699F300EB163A /* Xibs */,
+				C3A35F121A3699E500EB163A /* Views */,
+				C3A35F111A3699DD00EB163A /* Models */,
+				C3A35F0F1A3699C400EB163A /* Controllers */,
 				C3A35EEA1A368CCC00EB163A /* AppDelegate.h */,
 				C3A35EEB1A368CCC00EB163A /* AppDelegate.m */,
-				C3A35EF01A368CCC00EB163A /* ViewController.h */,
-				C3A35EF11A368CCC00EB163A /* ViewController.m */,
 				C3A35EF31A368CCC00EB163A /* Main.storyboard */,
 				C3A35EF61A368CCC00EB163A /* Images.xcassets */,
 				C3A35EF81A368CCC00EB163A /* LaunchScreen.xib */,
@@ -120,6 +135,44 @@
 				C3A35F041A368CCC00EB163A /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C3A35F0F1A3699C400EB163A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C3A35F191A36A65B00EB163A /* MBBBaseUIViewController.h */,
+				C3A35F1A1A36A65B00EB163A /* MBBBaseUIViewController.m */,
+				C3A35F1C1A36A6BA00EB163A /* MBBLoginViewController.h */,
+				C3A35F1D1A36A6BA00EB163A /* MBBLoginViewController.m */,
+				C3CD9D951A36D64E000F842E /* MBBHomeViewController.h */,
+				C3CD9D961A36D64E000F842E /* MBBHomeViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		C3A35F111A3699DD00EB163A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		C3A35F121A3699E500EB163A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C3A35F161A36A33400EB163A /* MBBLoginView.h */,
+				C3A35F171A36A33400EB163A /* MBBLoginView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		C3A35F131A3699F300EB163A /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				C3A35F141A369D3F00EB163A /* LoginView.xib */,
+				C3CD9D991A36D7A8000F842E /* HomeView.xib */,
+			);
+			name = Xibs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,6 +219,7 @@
 		C3A35EDB1A368CCC00EB163A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = MBB;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = Mac;
 				TargetAttributes = {
@@ -204,7 +258,9 @@
 			files = (
 				C3A35EF51A368CCC00EB163A /* Main.storyboard in Resources */,
 				C3A35EFA1A368CCC00EB163A /* LaunchScreen.xib in Resources */,
+				C3A35F151A369D3F00EB163A /* LoginView.xib in Resources */,
 				C3A35EF71A368CCC00EB163A /* Images.xcassets in Resources */,
+				C3CD9D9A1A36D7A8000F842E /* HomeView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,8 +280,11 @@
 			files = (
 				C3A35EEF1A368CCC00EB163A /* MacBulletinBoard.xcdatamodeld in Sources */,
 				C3A35EEC1A368CCC00EB163A /* AppDelegate.m in Sources */,
-				C3A35EF21A368CCC00EB163A /* ViewController.m in Sources */,
+				C3A35F1E1A36A6BA00EB163A /* MBBLoginViewController.m in Sources */,
+				C3A35F181A36A33400EB163A /* MBBLoginView.m in Sources */,
+				C3CD9D971A36D64E000F842E /* MBBHomeViewController.m in Sources */,
 				C3A35EE91A368CCC00EB163A /* main.m in Sources */,
+				C3A35F1B1A36A65B00EB163A /* MBBBaseUIViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +475,7 @@
 				C3A35F0B1A368CCC00EB163A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C3A35F0C1A368CCC00EB163A /* Build configuration list for PBXNativeTarget "MacBulletinBoardTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +484,7 @@
 				C3A35F0E1A368CCC00EB163A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
