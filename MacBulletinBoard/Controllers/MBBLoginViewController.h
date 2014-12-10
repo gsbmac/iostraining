@@ -12,7 +12,5 @@
 @interface MBBLoginViewController : MBBBaseUIViewController<MBBLoginViewDelegate, UITextFieldDelegate>
 
 @property (strong, nonatomic) MBBLoginView *loginView;
-//@property (strong, nonatomic) NSArray *users;
-//@property (strong, nonatomic) NSMutableArray *passwords;
 
 @end

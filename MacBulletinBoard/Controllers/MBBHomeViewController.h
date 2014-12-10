@@ -7,7 +7,11 @@
 //
 
 #import "MBBBaseUIViewController.h"
+#import "MBBHomeView.h"
+#import "MBBPostTableViewCell.h"
 
-@interface MBBHomeViewController : MBBBaseUIViewController
+@interface MBBHomeViewController : MBBBaseUIViewController<MBBHomeViewDelegate, UITableViewDelegate,UITableViewDataSource>
+
+@property (strong, nonatomic) MBBHomeView *homeView;
 
 @end
