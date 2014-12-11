@@ -35,9 +35,38 @@
 }
 
 - (void)addPostButtonPressed{
-    //[self performSegueWithIdentifier:@"LoginToHomeSegue" sender:self];
+    
+    // get textfield value
+    
+    NSString *title = self.addPostView.titleInput.text;
+    NSString *body = self.addPostView.postInput.text;
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *username = [defaults objectForKey:@"username"];
+    
+    AppDelegate *ad = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    
+    NSEntityDescription *entityPost = [NSEntityDescription entityForName:@"Post" inManagedObjectContext:ad.managedObjectContext];
+    NSManagedObject *newPost = [[NSManagedObject alloc] initWithEntity:entityPost insertIntoManagedObjectContext:ad.managedObjectContext];
+    
+    [newPost setValue:title forKey:@"title"];
+    [newPost setValue:body forKey:@"body"];
+    [newPost setValue:username forKey:@"user"];
+    
+    NSError *error = nil;
+    
+    if (![newPost.managedObjectContext save:&error]) {
+        NSLog(@"Unable to save managed object context.");
+        NSLog(@"%@, %@", error, error.localizedDescription);
+    }
+    
+    // =============================================================================
+    
+    //[self dismissViewControllerAnimated:YES completion:nil];
+    
+    //[self performSegueWithIdentifier:@"LoginToHomeSegue" sender:self];
+    
+    /*NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     NSString *user = [defaults objectForKey:@"username"];
     NSMutableArray *persistenTitles = [[defaults arrayForKey:@"titles"] mutableCopy];
@@ -47,6 +76,7 @@
     NSString *inputTitle = self.addPostView.titleInput.text;
     NSString *inputPost = self.addPostView.postInput.text;
     
+    
     // Init arrays
     [persistenTitles addObject:inputTitle];
     [persistentPosts addObject:inputPost];
@@ -55,9 +85,11 @@
     // Store arrays to NSUserDefaults
     [defaults setObject:persistenTitles forKey:@"titles"];
     [defaults setObject:persistentPosts forKey:@"posts"];
-    [defaults setObject:persistentUsers forKey:@"users"];
+    [defaults setObject:persistentUsers forKey:@"users"];*/
     
     //[self.homeView.postTableView reloadData];
+    
+    // =============================================================================
 }
 
 /*

@@ -8,6 +8,7 @@
 
 #import "MBBBaseUIViewController.h"
 #import "MBBAddPostView.h"
+#import "AppDelegate.h"
 
 @interface MBBAddPostViewController : MBBBaseUIViewController<MBBAddPostViewDelegate, UITextFieldDelegate, UITextViewDelegate>
 
