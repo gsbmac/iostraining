@@ -62,14 +62,19 @@
     self.homeView.usernameLabel.text = username;
     if ([username isEqualToString:@"mac"]) {
         self.homeView.profilePicture.image = [UIImage imageNamed:@"icon"];
-        self.homeView.profilePicture.layer.cornerRadius = self.homeView.profilePicture.frame.size.height/2;
-        self.homeView.profilePicture.layer.masksToBounds = YES;
+        
+        //Make Profile Image in Circular Shape
+        self.homeView.profilePicture.layer.cornerRadius = self.homeView.profilePicture.frame.size.height / 2;
+        self.homeView.profilePicture.clipsToBounds = YES;
         self.homeView.profilePicture.layer.borderWidth = 2.0f;
         self.homeView.profilePicture.layer.borderColor = [UIColor whiteColor].CGColor;
     }
     else {
         self.homeView.profilePicture.image = [UIImage imageNamed:@"user"];
-        self.homeView.profilePicture.layer.cornerRadius = 44;
+        
+        //Make Profile Image in Circular Shape
+        self.homeView.profilePicture.layer.cornerRadius = self.homeView.profilePicture.frame.size.height / 2;
+        self.homeView.profilePicture.clipsToBounds = YES;
         self.homeView.profilePicture.layer.borderWidth = 2.0f;
         self.homeView.profilePicture.layer.borderColor = [UIColor whiteColor].CGColor;
     }

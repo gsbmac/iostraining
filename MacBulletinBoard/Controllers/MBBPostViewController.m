@@ -26,16 +26,19 @@
     NSString *title = [defaults objectForKey:@"title"];
     NSString *post = [defaults objectForKey:@"post"];
     NSString *user = [defaults objectForKey:@"user"];
-    //NSString *user = [defaults objectForKey:@"user"];
     
     self.postView.titleLabel.text = title;
     self.postView.postLabel.text = post;
-    self.postView.userLabel.text = user;
+    self.postView.userLabel.text = [NSString stringWithFormat:@"%@ %@", @"Posted by: ", user];
+    
+    //CGSize labelSize = [text sizeWithFont:[UIFont systemFontSize:17.0f] constrainedToSize:self.postView.postLabel.frame.size lineBreakMode:NSLineBreakByWordWrapping];
     
     if ([user isEqualToString:@"mac"]) {
         self.postView.profilePicture.image = [UIImage imageNamed:@"icon"];
     }
-    else self.postView.profilePicture.image = [UIImage imageNamed:@"user"];
+    else {
+        self.postView.profilePicture.image = [UIImage imageNamed:@"user"];
+    }
     
     [self.view addSubview:self.postView];
 }

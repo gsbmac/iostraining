@@ -59,7 +59,7 @@
                     </subviews>
                 </scrollView>
             </subviews>
-            <color key="backgroundColor" red="0.090196080505847931" green="0.38039219379425049" blue="0.32549020648002625" alpha="1" colorSpace="deviceRGB"/>
+            <color key="backgroundColor" red="0.090196080509999998" green="0.3803921938" blue="0.32549020649999999" alpha="1" colorSpace="deviceRGB"/>
             <connections>
                 <outlet property="loginButton" destination="JcK-Py-ux1" id="m0V-6o-rPU"/>
                 <outlet property="passwordTextField" destination="cqc-dD-aA6" id="Fov-Cz-4Jp"/>
