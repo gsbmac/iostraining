@@ -9,6 +9,7 @@
 #import "MBBBaseUIViewController.h"
 #import "MBBHomeView.h"
 #import "MBBPostTableViewCell.h"
+#import "AppDelegate.h"
 
 @interface MBBHomeViewController : MBBBaseUIViewController<MBBHomeViewDelegate, UITableViewDelegate,UITableViewDataSource>
 

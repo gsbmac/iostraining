@@ -7,6 +7,7 @@
 //
 
 #import "MBBHomeViewController.h"
+#import "Post.h"
 
 @interface MBBHomeViewController (){
     NSMutableArray *titles;
@@ -82,6 +83,28 @@
     [self.view addSubview:self.homeView];
 }
 
+- (NSArray*)getAllPost {
+    AppDelegate *ad = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Post" inManagedObjectContext:ad.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    NSError *error = nil;
+    NSArray *result = [ad.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+    if (error) {
+        NSLog(@"Unable to execute fetch request.");
+        NSLog(@"%@, %@", error, error.localizedDescription);
+    }
+    else {
+        NSLog(@"%@", result);
+    }
+    
+    return result;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -102,9 +125,10 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSMutableArray *persistentTitles = [[defaults arrayForKey:@"titles"] mutableCopy];
-    return persistentTitles.count;
+    //NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    //NSMutableArray *persistentTitles = [[defaults arrayForKey:@"titles"] mutableCopy];
+    //return persistentTitles.count;
+    return [self getAllPost].count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -117,6 +141,7 @@
             postCell = [[[NSBundle mainBundle] loadNibNamed:@"PostTableViewCell" owner:nil options:nil] objectAtIndex:0];
         }
         
+        /*
         // init userdefaults
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         
@@ -129,6 +154,15 @@
         postCell.postLabel.text = [persistentPosts objectAtIndex:indexPath.row];
         postCell.userLabel.text = [persistentUsers objectAtIndex:indexPath.row];
         
+        return postCell;
+    }*/
+    
+        Post *post = [[self getAllPost] objectAtIndex:indexPath.row];
+    
+        postCell.titleLabel.text = post.title;
+        postCell.postLabel.text = post.body;
+        postCell.userLabel.text = post.user;
+    
         return postCell;
     }
     

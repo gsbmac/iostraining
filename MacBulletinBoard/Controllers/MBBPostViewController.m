@@ -7,6 +7,7 @@
 //
 
 #import "MBBPostViewController.h"
+#import "Post.h"
 
 @interface MBBPostViewController ()
 
