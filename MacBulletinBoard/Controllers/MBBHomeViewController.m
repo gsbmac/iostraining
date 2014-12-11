@@ -62,7 +62,8 @@
     self.homeView.usernameLabel.text = username;
     if ([username isEqualToString:@"mac"]) {
         self.homeView.profilePicture.image = [UIImage imageNamed:@"icon"];
-        self.homeView.profilePicture.layer.cornerRadius = 44;
+        self.homeView.profilePicture.layer.cornerRadius = self.homeView.profilePicture.frame.size.height/2;
+        self.homeView.profilePicture.layer.masksToBounds = YES;
         self.homeView.profilePicture.layer.borderWidth = 2.0f;
         self.homeView.profilePicture.layer.borderColor = [UIColor whiteColor].CGColor;
     }
@@ -83,27 +84,6 @@
 
 - (void)addPostButtonPressed{
     [self performSegueWithIdentifier:@"HomeToAddPostSegue" sender:self];
-    
-    /*
-     / NSUserDefaults defaults = [NSUserDefaults standardUserDefaults];
-     NSString *username = [defaults objectForKey:@"username"];
-     
-     NSMutableArray *persistenTitles = [[defaults arrayForKey:@"titles"]mutableCopy];
-     NSMutableArray *persistentPosts = [[defaults arrayForKey:@"posts"]mutableCopy];
-     NSMutableArray *persistentUsers = [[defaults arrayForKey:@"users"]mutableCopy];
-     
-     // Init arrays
-     [persistenTitles addObject:@"test"];
-     [persistentPosts addObject:@"test"];
-     [persistentUsers addObject:username];
-     
-     // Store arrays to NSUserDefaults
-     [defaults setObject:persistenTitles forKey:@"titles"];
-     [defaults setObject:persistentPosts forKey:@"posts"];
-     [defaults setObject:persistentUsers forKey:@"users"];
-     
-     [self.homeView.postTableView reloadData];
-     */
 }
 
 - (void)logoutButtonPressed{

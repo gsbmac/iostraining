@@ -29,6 +29,8 @@
 		C3CD9D971A36D64E000F842E /* MBBHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3CD9D961A36D64E000F842E /* MBBHomeViewController.m */; };
 		C3CD9D9A1A36D7A8000F842E /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3CD9D991A36D7A8000F842E /* HomeView.xib */; };
 		C3DC01FB1A372A4000C0F5CD /* AddPostView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3DC01FA1A372A4000C0F5CD /* AddPostView.xib */; };
+		C3E081321A3930EE00CAAF7B /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3E081311A3930EE00CAAF7B /* CommentTableViewCell.xib */; };
+		C3E081351A39320F00CAAF7B /* MBBCommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E081341A39320F00CAAF7B /* MBBCommentTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,9 @@
 		C3CD9D961A36D64E000F842E /* MBBHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBBHomeViewController.m; path = Controllers/MBBHomeViewController.m; sourceTree = "<group>"; };
 		C3CD9D991A36D7A8000F842E /* HomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomeView.xib; path = Xibs/HomeView.xib; sourceTree = "<group>"; };
 		C3DC01FA1A372A4000C0F5CD /* AddPostView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddPostView.xib; path = Xibs/AddPostView.xib; sourceTree = "<group>"; };
+		C3E081311A3930EE00CAAF7B /* CommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CommentTableViewCell.xib; path = Xibs/CommentTableViewCell.xib; sourceTree = "<group>"; };
+		C3E081331A39320F00CAAF7B /* MBBCommentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBBCommentTableViewCell.h; path = Views/MBBCommentTableViewCell.h; sourceTree = "<group>"; };
+		C3E081341A39320F00CAAF7B /* MBBCommentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBBCommentTableViewCell.m; path = Views/MBBCommentTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +203,8 @@
 				C309B9811A38282F00700D26 /* MBBAddPostView.m */,
 				C309B9861A38337600700D26 /* MBBPostView.h */,
 				C309B9871A38337600700D26 /* MBBPostView.m */,
+				C3E081331A39320F00CAAF7B /* MBBCommentTableViewCell.h */,
+				C3E081341A39320F00CAAF7B /* MBBCommentTableViewCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -210,6 +217,7 @@
 				C3DC01FA1A372A4000C0F5CD /* AddPostView.xib */,
 				C3ABC08B1A37F5DE00AFAA5B /* PostTableViewCell.xib */,
 				C3ABC0901A37F9E200AFAA5B /* PostView.xib */,
+				C3E081311A3930EE00CAAF7B /* CommentTableViewCell.xib */,
 			);
 			name = Xibs;
 			sourceTree = "<group>";
@@ -302,6 +310,7 @@
 				C3A35F151A369D3F00EB163A /* LoginView.xib in Resources */,
 				C3A35EF71A368CCC00EB163A /* Images.xcassets in Resources */,
 				C3ABC0911A37F9E200AFAA5B /* PostView.xib in Resources */,
+				C3E081321A3930EE00CAAF7B /* CommentTableViewCell.xib in Resources */,
 				C3CD9D9A1A36D7A8000F842E /* HomeView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,6 +336,7 @@
 				C3A35F1E1A36A6BA00EB163A /* MBBLoginViewController.m in Sources */,
 				C3A35F181A36A33400EB163A /* MBBLoginView.m in Sources */,
 				C3ABC08F1A37F6B500AFAA5B /* MBBPostTableViewCell.m in Sources */,
+				C3E081351A39320F00CAAF7B /* MBBCommentTableViewCell.m in Sources */,
 				C309B9881A38337600700D26 /* MBBPostView.m in Sources */,
 				C3CD9D971A36D64E000F842E /* MBBHomeViewController.m in Sources */,
 				C309B9851A38335700700D26 /* MBBPostViewController.m in Sources */,
