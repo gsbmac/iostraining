@@ -9,11 +9,13 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+@class Post;
 
 @interface Comment : NSManagedObject
 
 @property (nonatomic, retain) NSString * comment_text;
 @property (nonatomic, retain) NSString * user;
-@property (nonatomic, retain) NSManagedObject *post;
+@property (nonatomic, retain) NSString * title;
+@property (nonatomic, retain) Post *post;
 
 @end

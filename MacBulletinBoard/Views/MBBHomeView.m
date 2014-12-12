@@ -18,6 +18,13 @@
 }
 */
 
+- (void) awakeFromNib {
+    self.profilePicture.layer.cornerRadius = self.profilePicture.frame.size.height / 2;
+    self.profilePicture.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.profilePicture.layer.borderWidth = 1.0f;
+    self.profilePicture.clipsToBounds = YES;
+}
+
 - (IBAction)addPostButtonPressed:(id)sender{
     if (self.delegate && [self.delegate respondsToSelector:@selector(addPostButtonPressed)]) {
         [self.delegate addPostButtonPressed];

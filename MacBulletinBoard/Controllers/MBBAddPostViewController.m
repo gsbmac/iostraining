@@ -60,6 +60,8 @@
         NSLog(@"%@, %@", error, error.localizedDescription);
     }
     
+    [self.navigationController popViewControllerAnimated:YES];
+    
     // =============================================================================
     
     //[self dismissViewControllerAnimated:YES completion:nil];

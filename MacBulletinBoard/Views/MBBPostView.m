@@ -19,5 +19,8 @@
 */
 
 - (IBAction)addCommentButtonPressed:(id)sender {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(addCommentButtonPressed)]) {
+        [self.delegate addCommentButtonPressed];
+    }
 }
 @end

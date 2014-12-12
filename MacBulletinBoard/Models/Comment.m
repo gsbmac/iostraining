@@ -7,12 +7,14 @@
 //
 
 #import "Comment.h"
+#import "Post.h"
 
 
 @implementation Comment
 
 @dynamic comment_text;
 @dynamic user;
+@dynamic title;
 @dynamic post;
 
 @end

@@ -10,7 +10,6 @@
 
 @interface MBBCommentTableViewCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet UITextView *commentLabel;
 
 @end

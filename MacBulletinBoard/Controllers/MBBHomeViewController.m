@@ -22,7 +22,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    /*NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     if ([defaults objectForKey:@"isFirstRun"] == nil) {
         NSLog(@"First Run");
@@ -39,7 +39,7 @@
         [defaults setObject:users forKey:@"users"];
     
         [defaults synchronize];
-    }
+    }*/
     
     [self initializeContents];
 }
@@ -62,22 +62,10 @@
     
     self.homeView.usernameLabel.text = username;
     if ([username isEqualToString:@"mac"]) {
-        self.homeView.profilePicture.image = [UIImage imageNamed:@"icon"];
-        
-        //Make Profile Image in Circular Shape
-        self.homeView.profilePicture.layer.cornerRadius = self.homeView.profilePicture.frame.size.height / 2;
-        self.homeView.profilePicture.clipsToBounds = YES;
-        self.homeView.profilePicture.layer.borderWidth = 2.0f;
-        self.homeView.profilePicture.layer.borderColor = [UIColor whiteColor].CGColor;
+        self.homeView.profilePicture.image = [UIImage imageNamed:@"image"];
     }
     else {
         self.homeView.profilePicture.image = [UIImage imageNamed:@"user"];
-        
-        //Make Profile Image in Circular Shape
-        self.homeView.profilePicture.layer.cornerRadius = self.homeView.profilePicture.frame.size.height / 2;
-        self.homeView.profilePicture.clipsToBounds = YES;
-        self.homeView.profilePicture.layer.borderWidth = 2.0f;
-        self.homeView.profilePicture.layer.borderColor = [UIColor whiteColor].CGColor;
     }
     
     [self.view addSubview:self.homeView];
@@ -103,6 +91,35 @@
     }
     
     return result;
+    
+    /* // with predicate
+     
+     AppDelegate *ad = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Post"];
+    
+    // Create Predicate
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K == %@", @"username", username];
+    [fetchRequest setPredicate:predicate];
+    
+    // Add Sort Descriptor
+    NSSortDescriptor *sortDescriptor1 = [NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES];
+    //    [fetchRequest setSortDescriptors:@[sortDescriptor1]];
+    
+    // Execute Fetch Request
+    NSError *fetchError = nil;
+    NSArray *result = [ad.managedObjectContext executeFetchRequest:fetchRequest error:&fetchError];
+    
+    if (!fetchError) {
+        for (NSManagedObject *managedObject in result) {
+            //            NSLog(@"%@, %@", [managedObject valueForKey:@"first"], [managedObject valueForKey:@"last"]);
+        }
+        
+    } else {
+        NSLog(@"Error fetching data.");
+        NSLog(@"%@, %@", fetchError, fetchError.localizedDescription);
+    }
+    return result;*/
 }
 
 - (void)didReceiveMemoryWarning {
@@ -156,12 +173,16 @@
         
         return postCell;
     }*/
-    
         Post *post = [[self getAllPost] objectAtIndex:indexPath.row];
     
         postCell.titleLabel.text = post.title;
         postCell.postLabel.text = post.body;
         postCell.userLabel.text = post.user;
+        
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        
+        [defaults setObject:post.title forKey:@"title"];
+        [defaults setObject:post.user forKey:@"user"];
     
         return postCell;
     }
@@ -176,21 +197,30 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // init userdefaults
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
     // retrieve users, posts, titles from userdefaults
-    NSMutableArray *persistentTitles = [[defaults arrayForKey:@"titles"] mutableCopy];
+    /*NSMutableArray *persistentTitles = [[defaults arrayForKey:@"titles"] mutableCopy];
     NSMutableArray *persistentPosts = [[defaults arrayForKey:@"posts"] mutableCopy];
     NSMutableArray *persistentUsers = [[defaults arrayForKey:@"users"] mutableCopy];
+     
+     NSMutableArray *persistentTitles = [[defaults arrayForKey:post.title] mutableCopy];
+     NSMutableArray *persistentPosts = [[defaults arrayForKey:post.body] mutableCopy];
+     NSMutableArray *persistentUsers = [[defaults arrayForKey:post.user] mutableCopy];
+     
+     NSString *title = [persistentTitles objectAtIndex:indexPath.row];
+     NSString *post = [persistentPosts objectAtIndex:indexPath.row];
+     NSString *user = [persistentUsers objectAtIndex:indexPath.row];
+     
+     [defaults setObject:title forKey:@"title"];
+     [defaults setObject:post forKey:@"post"];
+     [defaults setObject:user forKey:@"user"];
+    */
     
-    NSString *title = [persistentTitles objectAtIndex:indexPath.row];
-    NSString *post = [persistentPosts objectAtIndex:indexPath.row];
-    NSString *user = [persistentUsers objectAtIndex:indexPath.row];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    Post *post = [[self getAllPost] objectAtIndex:indexPath.row];
     
-    [defaults setObject:title forKey:@"title"];
-    [defaults setObject:post forKey:@"post"];
-    [defaults setObject:user forKey:@"user"];
+    [defaults setObject:post.title forKey:@"title"];
+    [defaults setObject:post.body forKey:@"post"];
+    [defaults setObject:post.user forKey:@"user"];
     
     [self performSegueWithIdentifier:@"HomeToPostSegue" sender:nil];
 }
