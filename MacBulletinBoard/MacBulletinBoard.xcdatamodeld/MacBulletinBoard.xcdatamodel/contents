@@ -13,7 +13,7 @@
         <relationship name="comment" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Comment" inverseName="post" inverseEntity="Comment" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Post" positionX="-369" positionY="-45" width="128" height="103"/>
         <element name="Comment" positionX="-74" positionY="-25" width="128" height="103"/>
+        <element name="Post" positionX="-369" positionY="-45" width="128" height="103"/>
     </elements>
 </model>

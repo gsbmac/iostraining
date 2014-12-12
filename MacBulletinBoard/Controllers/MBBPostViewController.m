@@ -13,6 +13,7 @@
     NSMutableArray *com_users;
     NSMutableArray *com_posts;
     NSMutableArray *comments;
+    UITextView *activeField;
 }
 @end
 
@@ -22,7 +23,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]
+                                          initWithTarget:self
+                                          action:@selector(hideKeyBoard)];
     
+    [self.view addGestureRecognizer:tapGesture];
     
     [self initializeContents];
 }
@@ -62,7 +67,7 @@
     self.postView.delegate = self;
     self.postView.commentTable.delegate = self;
     self.postView.commentTable.dataSource = self;
-    self.postView.commentField.text = @"Comment here";
+    self.postView.commentField.delegate = self;
     
     // Init nsuserdefaults
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -84,10 +89,14 @@
     [self.view addSubview:self.postView];
 }
 
+-(void)hideKeyBoard {
+    [self.postView.commentField resignFirstResponder];
+}
+
 - (void) addCommentButtonPressed {
     // get textfield value
     
-    if ([self.postView.commentField.text isEqualToString:@"Comment here"]) {
+    if ([self.postView.commentField.text isEqualToString:@""]) {
         NSString *msg = @"Please insert a comment!";
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:msg delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertView show];
@@ -119,11 +128,6 @@
         self.postView.commentField.text = @"";
         [self.postView.commentTable reloadData];
     }
-}
-
-- (void)textViewDidBeginEditing:(UITextView *)textView {
-    self.postView.commentField.text = @"";
-    [self.postView.commentField reloadInputViews];
 }
 
 #pragma mark - UITableViewDataSource
@@ -165,8 +169,49 @@
     return 70.0;
 }
 
+#pragma mark - UITextView Delegates
+- (void) textViewDidBeginEditing:(UITextView *)textView{
+    //self.postView.commentField.text = @"";
+    //[self.postView.commentField reloadInputViews];
+    activeField = textView;
+}
 
+- (void) textViewDidEndEditing:(UITextView *)textView{
+    activeField = nil;
+}
 
+- (BOOL) textViewShouldReturn:(UITextView *) textView{
+    [textView resignFirstResponder];
+    return YES;
+}
+
+#pragma mark - Keyboard
+- (void)registerForKeyboardNotifications {
+    
+    // tracks whether the keyboard is shown or not
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWasShown:) name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillBeHidden:) name:UIKeyboardWillHideNotification object:nil];
+}
+
+- (void)keyboardWasShown:(NSNotification *)aNotification {
+    // Get size of displayed keyboard
+    NSDictionary* info = [aNotification userInfo];
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    
+    // Compute visible active field
+    CGRect visibleActiveFieldRect = CGRectMake(activeField.frame.origin.x, activeField.frame.origin.y + kbSize.height, activeField.frame.size.width, activeField.frame.size.height+10);
+    
+    // Adjust scroll view content size
+    self.postView.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height + kbSize.height);
+    
+    // Scroll to visible active field
+    [self.postView.scrollView scrollRectToVisible:visibleActiveFieldRect animated:YES];
+}
+
+- (void)keyboardWillBeHidden:(NSNotification *)aNotification {
+    // Reset the content size of the scroll view
+    self.postView.scrollView.contentSize = CGSizeMake(0.0, 0.0);
+}
 /*
 #pragma mark - Navigation
 

@@ -23,4 +23,10 @@
         [self.delegate addPostButtonPressed];
     }
 }
+
+- (IBAction)cancelButtonPressed:(id)sender {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(cancelButtonPressed)]) {
+        [self.delegate cancelButtonPressed];
+    }
+}
 @end

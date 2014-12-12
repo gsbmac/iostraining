@@ -11,7 +11,7 @@
 #import "MBBCommentTableViewCell.h"
 #import "AppDelegate.h"
 
-@interface MBBPostViewController : MBBBaseUIViewController<MBBPostViewDelegate, UITextViewDelegate, UITableViewDelegate, UITableViewDataSource>
+@interface MBBPostViewController : MBBBaseUIViewController<MBBPostViewDelegate, UITextFieldDelegate, UITextViewDelegate, UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) MBBPostView *postView;
 

@@ -12,6 +12,7 @@
 @required
 
 - (void)addPostButtonPressed;
+- (void)cancelButtonPressed;
 
 @end
 
@@ -20,9 +21,11 @@
 @property (weak, nonatomic) IBOutlet UITextField *titleInput;
 @property (weak, nonatomic) IBOutlet UITextView *postInput;
 @property (weak, nonatomic) IBOutlet UIButton *addpostButton;
+@property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 @property (weak, nonatomic) IBOutlet UIScrollView *addPostScrollView;
 
 - (IBAction)addPostButtonPressed:(id)sender;
+- (IBAction)cancelButtonPressed:(id)sender;
 
 @property (strong) id<MBBAddPostViewDelegate> delegate;
 

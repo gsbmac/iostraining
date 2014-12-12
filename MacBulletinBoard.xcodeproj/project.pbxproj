@@ -12,6 +12,8 @@
 		C309B9851A38335700700D26 /* MBBPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C309B9841A38335700700D26 /* MBBPostViewController.m */; };
 		C309B9881A38337600700D26 /* MBBPostView.m in Sources */ = {isa = PBXBuildFile; fileRef = C309B9871A38337600700D26 /* MBBPostView.m */; };
 		C32B69611A36FC7800A077A5 /* MBBHomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C32B69601A36FC7800A077A5 /* MBBHomeView.m */; };
+		C3761C1F1A3AC7E700E4C976 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = C3761C1E1A3AC7E700E4C976 /* Post.m */; };
+		C3761C221A3AC7E800E4C976 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = C3761C211A3AC7E800E4C976 /* Comment.m */; };
 		C3A35EE91A368CCC00EB163A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A35EE81A368CCC00EB163A /* main.m */; };
 		C3A35EEC1A368CCC00EB163A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A35EEB1A368CCC00EB163A /* AppDelegate.m */; };
 		C3A35EEF1A368CCC00EB163A /* MacBulletinBoard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C3A35EED1A368CCC00EB163A /* MacBulletinBoard.xcdatamodeld */; };
@@ -26,8 +28,6 @@
 		C3ABC08C1A37F5DE00AFAA5B /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3ABC08B1A37F5DE00AFAA5B /* PostTableViewCell.xib */; };
 		C3ABC08F1A37F6B500AFAA5B /* MBBPostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3ABC08E1A37F6B500AFAA5B /* MBBPostTableViewCell.m */; };
 		C3ABC0911A37F9E200AFAA5B /* PostView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3ABC0901A37F9E200AFAA5B /* PostView.xib */; };
-		C3CD68961A399EBE00889869 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = C3CD68951A399EBE00889869 /* Post.m */; };
-		C3CD68991A399EBF00889869 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = C3CD68981A399EBF00889869 /* Comment.m */; };
 		C3CD9D971A36D64E000F842E /* MBBHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3CD9D961A36D64E000F842E /* MBBHomeViewController.m */; };
 		C3CD9D9A1A36D7A8000F842E /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3CD9D991A36D7A8000F842E /* HomeView.xib */; };
 		C3DC01FB1A372A4000C0F5CD /* AddPostView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3DC01FA1A372A4000C0F5CD /* AddPostView.xib */; };
@@ -56,6 +56,10 @@
 		C309B9871A38337600700D26 /* MBBPostView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBBPostView.m; path = Views/MBBPostView.m; sourceTree = "<group>"; };
 		C32B695F1A36FC7800A077A5 /* MBBHomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBBHomeView.h; path = Views/MBBHomeView.h; sourceTree = "<group>"; };
 		C32B69601A36FC7800A077A5 /* MBBHomeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBBHomeView.m; path = Views/MBBHomeView.m; sourceTree = "<group>"; };
+		C3761C1D1A3AC7E700E4C976 /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Post.h; path = Models/Post.h; sourceTree = "<group>"; };
+		C3761C1E1A3AC7E700E4C976 /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Post.m; path = Models/Post.m; sourceTree = "<group>"; };
+		C3761C201A3AC7E800E4C976 /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Comment.h; path = Models/Comment.h; sourceTree = "<group>"; };
+		C3761C211A3AC7E800E4C976 /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Comment.m; path = Models/Comment.m; sourceTree = "<group>"; };
 		C3A35EE31A368CCC00EB163A /* MacBulletinBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacBulletinBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3A35EE71A368CCC00EB163A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3A35EE81A368CCC00EB163A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -79,10 +83,6 @@
 		C3ABC08D1A37F6B500AFAA5B /* MBBPostTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBBPostTableViewCell.h; path = Views/MBBPostTableViewCell.h; sourceTree = "<group>"; };
 		C3ABC08E1A37F6B500AFAA5B /* MBBPostTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBBPostTableViewCell.m; path = Views/MBBPostTableViewCell.m; sourceTree = "<group>"; };
 		C3ABC0901A37F9E200AFAA5B /* PostView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PostView.xib; path = Xibs/PostView.xib; sourceTree = "<group>"; };
-		C3CD68941A399EBE00889869 /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Post.h; path = Models/Post.h; sourceTree = "<group>"; };
-		C3CD68951A399EBE00889869 /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Post.m; path = Models/Post.m; sourceTree = "<group>"; };
-		C3CD68971A399EBF00889869 /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Comment.h; path = Models/Comment.h; sourceTree = "<group>"; };
-		C3CD68981A399EBF00889869 /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Comment.m; path = Models/Comment.m; sourceTree = "<group>"; };
 		C3CD9D951A36D64E000F842E /* MBBHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBBHomeViewController.h; path = Controllers/MBBHomeViewController.h; sourceTree = "<group>"; };
 		C3CD9D961A36D64E000F842E /* MBBHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBBHomeViewController.m; path = Controllers/MBBHomeViewController.m; sourceTree = "<group>"; };
 		C3CD9D991A36D7A8000F842E /* HomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomeView.xib; path = Xibs/HomeView.xib; sourceTree = "<group>"; };
@@ -192,10 +192,10 @@
 		C3A35F111A3699DD00EB163A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C3CD68971A399EBF00889869 /* Comment.h */,
-				C3CD68981A399EBF00889869 /* Comment.m */,
-				C3CD68941A399EBE00889869 /* Post.h */,
-				C3CD68951A399EBE00889869 /* Post.m */,
+				C3761C201A3AC7E800E4C976 /* Comment.h */,
+				C3761C211A3AC7E800E4C976 /* Comment.m */,
+				C3761C1D1A3AC7E700E4C976 /* Post.h */,
+				C3761C1E1A3AC7E700E4C976 /* Post.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -346,11 +346,11 @@
 				C3A35F1E1A36A6BA00EB163A /* MBBLoginViewController.m in Sources */,
 				C3A35F181A36A33400EB163A /* MBBLoginView.m in Sources */,
 				C3ABC08F1A37F6B500AFAA5B /* MBBPostTableViewCell.m in Sources */,
-				C3CD68991A399EBF00889869 /* Comment.m in Sources */,
+				C3761C221A3AC7E800E4C976 /* Comment.m in Sources */,
 				C3E081351A39320F00CAAF7B /* MBBCommentTableViewCell.m in Sources */,
 				C309B9881A38337600700D26 /* MBBPostView.m in Sources */,
 				C3CD9D971A36D64E000F842E /* MBBHomeViewController.m in Sources */,
-				C3CD68961A399EBE00889869 /* Post.m in Sources */,
+				C3761C1F1A3AC7E700E4C976 /* Post.m in Sources */,
 				C309B9851A38335700700D26 /* MBBPostViewController.m in Sources */,
 				C32B69611A36FC7800A077A5 /* MBBHomeView.m in Sources */,
 				C3A35EE91A368CCC00EB163A /* main.m in Sources */,

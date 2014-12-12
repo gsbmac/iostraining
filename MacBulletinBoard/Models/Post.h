@@ -2,7 +2,7 @@
 //  Post.h
 //  MacBulletinBoard
 //
-//  Created by Mac on 12/11/14.
+//  Created by Mac on 12/12/14.
 //  Copyright (c) 2014 Mac. All rights reserved.
 //
 

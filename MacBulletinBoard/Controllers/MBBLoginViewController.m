@@ -22,6 +22,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]
+                                           initWithTarget:self
+                                           action:@selector(hideKeyBoard)];
+    
+    [self.view addGestureRecognizer:tapGesture];
+    
+    [self initializeContents];
+}
+
+- (void)initializeContents {
     // load xib into view
     self.loginView = (MBBLoginView*)[self getCustomXibUsingXibName:@"LoginView"];
     
@@ -39,6 +49,16 @@
     
     // add login view to view
     [self.view addSubview:self.loginView];
+}
+
+-(void)hideKeyBoard {
+    [self.loginView.usernameTextField resignFirstResponder];
+    [self.loginView.passwordTextField resignFirstResponder];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    self.loginView.usernameTextField.text = @"";
+    self.loginView.passwordTextField.text = @"";
 }
 
 - (void)didReceiveMemoryWarning {

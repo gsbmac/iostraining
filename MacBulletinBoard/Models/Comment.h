@@ -2,7 +2,7 @@
 //  Comment.h
 //  MacBulletinBoard
 //
-//  Created by Mac on 12/11/14.
+//  Created by Mac on 12/12/14.
 //  Copyright (c) 2014 Mac. All rights reserved.
 //
 
@@ -14,8 +14,8 @@
 @interface Comment : NSManagedObject
 
 @property (nonatomic, retain) NSString * comment_text;
-@property (nonatomic, retain) NSString * user;
 @property (nonatomic, retain) NSString * title;
+@property (nonatomic, retain) NSString * user;
 @property (nonatomic, retain) Post *post;
 
 @end

@@ -21,11 +21,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *profilePicture;
 @property (weak, nonatomic) IBOutlet UILabel *userLabel;
-@property (weak, nonatomic) IBOutlet UIScrollView *postScrollView;
 @property (weak, nonatomic) IBOutlet UITableView *commentTable;
 @property (weak, nonatomic) IBOutlet UITextView *postLabel;
 @property (weak, nonatomic) IBOutlet UITextView *commentField;
 @property (weak, nonatomic) IBOutlet UIButton *addCommentButton;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 - (IBAction)addCommentButtonPressed:(id)sender;
 

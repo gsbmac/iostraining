@@ -8,8 +8,9 @@
 
 #import "MBBAddPostViewController.h"
 
-@interface MBBAddPostViewController ()
-
+@interface MBBAddPostViewController () {
+    UITextField *activeField;
+}
 @end
 
 @implementation MBBAddPostViewController
@@ -17,6 +18,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]
+                                          initWithTarget:self
+                                          action:@selector(hideKeyBoard)];
+    
+    [self.view addGestureRecognizer:tapGesture];
     
     self.addPostView = (MBBAddPostView*)[self getCustomXibUsingXibName:@"AddPostView"];
     self.addPostView.frame = CGRectMake(0.0, 0.0, self.view.frame.size.width, self.view.frame.size.height);
@@ -26,12 +33,18 @@
     self.addPostView.titleInput.delegate = self;
     self.addPostView.postInput.delegate = self;
 
+    self.navigationItem.hidesBackButton = YES; // hides the back button
     [self.view addSubview:self.addPostView];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)hideKeyBoard {
+    [self.addPostView.titleInput resignFirstResponder];
+    [self.addPostView.postInput resignFirstResponder];
 }
 
 - (void)addPostButtonPressed{
@@ -92,6 +105,53 @@
     //[self.homeView.postTableView reloadData];
     
     // =============================================================================
+}
+
+- (void)cancelButtonPressed {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+#pragma mark - UITextField Delegates
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField{
+    activeField = textField;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    activeField = nil;
+}
+
+- (bool)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+#pragma mark - Keyboard
+- (void)registerForKeyboardNotifications {
+    
+    // tracks whether the keyboard is shown or not
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWasShown:) name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillBeHidden:) name:UIKeyboardWillHideNotification object:nil];
+}
+
+- (void)keyboardWasShown:(NSNotification *)aNotification {
+    // Get size of displayed keyboard
+    NSDictionary* info = [aNotification userInfo];
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    
+    // Compute visible active field
+    CGRect visibleActiveFieldRect = CGRectMake(activeField.frame.origin.x, activeField.frame.origin.y + kbSize.height, activeField.frame.size.width, activeField.frame.size.height+10);
+    
+    // Adjust scroll view content size
+    self.addPostView.addPostScrollView.contentSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height + kbSize.height);
+    
+    // Scroll to visible active field
+    [self.addPostView.addPostScrollView scrollRectToVisible:visibleActiveFieldRect animated:YES];
+}
+
+- (void)keyboardWillBeHidden:(NSNotification *)aNotification {
+    // Reset the content size of the scroll view
+    self.addPostView.addPostScrollView.contentSize = CGSizeMake(0.0, 0.0);
 }
 
 /*
